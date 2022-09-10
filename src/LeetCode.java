@@ -20,6 +20,7 @@ public class LeetCode {
                     ans.add(t+s);
             }
         }
+        System.out.printf("%C", 'A' + 2);
         return ans;
     }
 }
