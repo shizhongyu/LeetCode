@@ -22,6 +22,9 @@ public class LeetCode257 {
         LinkedList<Integer> list = new LinkedList<>();
         treePaths(t1, result, list);
         System.out.println(result);
+        result.clear();
+        treePaths(t1, result, t1.val + "");
+        System.out.println(result);
     }
 
     private static void treePaths(TreeNode root, List<String> result, LinkedList<Integer> list) {
@@ -40,6 +43,24 @@ public class LeetCode257 {
         if (root.right != null) {
             treePaths(root.right, result, list);
             list.removeLast();
+        }
+    }
+
+    private static void treePaths(TreeNode root, List<String> result, String list) {
+        if (root == null) {
+            return;
+        }
+        if (root.left == null && root.right == null) {
+            result.add(list);
+            return;
+        }
+        if (root.left != null) {
+            treePaths(root.left, result, list + "->" + root.left.val);
+            System.out.println("---" + list);
+        }
+        if (root.right != null) {
+            treePaths(root.right, result, list + "->" + root.right.val);
+            System.out.println("---" + list);
         }
     }
 
