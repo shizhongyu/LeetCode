@@ -11,7 +11,7 @@ public class LeetCode49 {
     public static List<List<String>> groupAnagrams(String[] strs) {
         HashMap<String, List<String>> map = new HashMap<>();
         for (String str : strs) {
-            int [] ac = new int[26];
+            char [] ac = new char[26];
             for (char c : str.toCharArray()) {
                 ac[c - 'a']++;
             }
