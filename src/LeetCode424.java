@@ -1,6 +1,6 @@
 import java.util.HashMap;
 
-public class ttCode424 {
+public class LeetCode424 {
     public static void main(String[] args) {
         String str = "ABAB";
         int target = 1;
