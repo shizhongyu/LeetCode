@@ -20,7 +20,7 @@ public class LeetCode236 {
         t5.left = t8;
         t5.right = t9;
 
-        System.out.println(lowestCommonAncestor(t1, t2, t3).val);
+        System.out.println(lowestCommonAncestor(t1, t4, t9).val);
     }
 
     public static TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {

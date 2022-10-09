@@ -1,5 +1,8 @@
 package Node;
 
+/**
+ * https://leetcode.cn/problems/validate-binary-search-tree/solution/zhong-xu-bian-li-qing-song-na-xia-bi-xu-miao-dong-/
+ */
 public class LeetCode98 {
 
     static long pre = -Long.MAX_VALUE;
@@ -21,14 +24,18 @@ public class LeetCode98 {
     }
 
 
-    public static boolean isValidBST(TreeNode root, long maxValue, long minValue) {
-        if (root == null) {
-            return true;
-        }
-        if (root.val >= maxValue || root.val <= minValue) return false;
-        return isValidBST(root.left, root.val, minValue) && isValidBST(root.right, maxValue, root.val);
-    }
-
+    /**
+     * 第二种
+     * @param root
+     * @param maxValue
+     * @param minValue
+     * @return
+     */
+    /**
+     * 第一种
+     * @param root
+     * @return
+     */
     public static boolean isValidBST(TreeNode root) {
         if (root == null) {
             return true;
@@ -43,4 +50,12 @@ public class LeetCode98 {
         pre = root.val;
         return isValidBST(root.right);
     }
+    public static boolean isValidBST(TreeNode root, long maxValue, long minValue) {
+        if (root == null) {
+            return true;
+        }
+        if (root.val >= maxValue || root.val <= minValue) return false;
+        return isValidBST(root.left, root.val, minValue) && isValidBST(root.right, maxValue, root.val);
+    }
+
 }
