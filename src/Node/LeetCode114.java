@@ -21,39 +21,19 @@ public class LeetCode114 {
         t5.right = t6;
 
         flatten(t1);
-//        flattenNode(t1);
-//        System.out.println(t1);
+
     }
 
-    public static TreeNode flattenNode(TreeNode root) {
-        if (root == null) {
-            return root;
+    private static void flatten(TreeNode root) {
+        if(root == null) {
+            return ;
         }
-        TreeNode leftLast = flattenNode(root.left);
-        TreeNode rightLast = flattenNode(root.right);
-
-        if (root.left != null) {
-            leftLast.right = root.right;
-            root.right = root.left;
-            root.left = null;
-        }
-
-        if (rightLast != null) {
-            return rightLast;
-        } else if (leftLast != null) {
-            return leftLast;
-        }
-        return root;
-    }
-
-    public static void flatten(TreeNode root) {
-        if (root == null)
-            return;
         flatten(root.right);
         flatten(root.left);
         root.right = pre;
-        root.left = null;
         pre = root;
+        root.left = null;
     }
+
 
 }
